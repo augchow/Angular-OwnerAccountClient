@@ -1,0 +1,17 @@
+p.homeText{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top:30px;
+    text-shadow: 2px 2px 2px gray;
+    padding-bottom: 40px;
+}
+
+mat-tab-group {
+    text-align: center;
+}
+ 
+mat-tab-group p {
+    padding-top: 20px;
+}
