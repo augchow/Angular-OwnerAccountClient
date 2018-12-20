@@ -12,7 +12,9 @@ import { LayoutComponent } from './layout/layout.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-
+import { EnvironmentUrlService } from './shared/services/environment-url.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RepositoryService } from './shared/services/repository.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +31,19 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     BrowserModule,
     FlexLayoutModule,
     RouterModule.forRoot([
+      { path: 'owner', loadChildren: "./owner/owner.module#OwnerModule" },
       { path: '404', component: NotFoundComponent},
       { path: '**', redirectTo: '/404', pathMatch: 'full'}
     ]),
-    RoutingModule 
+    RoutingModule,
+    HttpClientModule 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    EnvironmentUrlService,
+    RepositoryService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
