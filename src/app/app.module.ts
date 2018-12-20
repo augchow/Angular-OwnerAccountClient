@@ -19,7 +19,7 @@ import { RepositoryService } from './shared/services/repository.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent,
+    // MenuComponent,
     NotFoundComponent,
     LayoutComponent,
     HeaderComponent,
