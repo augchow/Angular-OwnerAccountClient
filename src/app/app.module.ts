@@ -15,6 +15,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { EnvironmentUrlService } from './shared/services/environment-url.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RepositoryService } from './shared/services/repository.service';
+import { InternalServerComponent } from './error-pages/internal-server/internal-server.component';
+import { ErrorHandlerService } from './shared/services/error-handler.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { RepositoryService } from './shared/services/repository.service';
     NotFoundComponent,
     LayoutComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    InternalServerComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,14 +36,17 @@ import { RepositoryService } from './shared/services/repository.service';
     RouterModule.forRoot([
       { path: 'owner', loadChildren: "./owner/owner.module#OwnerModule" },
       { path: '404', component: NotFoundComponent},
-      { path: '**', redirectTo: '/404', pathMatch: 'full'}
+      { path: '**', redirectTo: '/404', pathMatch: 'full'},
+      { path: '500', component: InternalServerComponent}
     ]),
     RoutingModule,
-    HttpClientModule 
+    HttpClientModule
+     
   ],
   providers: [
     EnvironmentUrlService,
-    RepositoryService
+    RepositoryService,
+    ErrorHandlerService
   ],
   bootstrap: [
     AppComponent
