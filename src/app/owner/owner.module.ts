@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { OwnerListComponent } from './owner-list/owner-list.component';
 import { RouterModule } from '@angular/router';
 import { OwnerDetailsComponent } from './owner-details/owner-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OwnerDetailsComponent } from './owner-details/owner-details.component';
     RouterModule.forChild([
       { path: 'list', component: OwnerListComponent },
       { path: 'details/:id', component: OwnerDetailsComponent }
-    ])
+    ]),
+    SharedModule
   ]
 })
 export class OwnerModule { }
