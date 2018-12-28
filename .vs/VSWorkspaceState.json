@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\owner",
+    "\\src\\app\\owner\\owner-details"
+  ],
+  "SelectedNode": "\\src\\app\\owner\\owner-details\\owner-details.component.ts",
+  "PreviewInSolutionExplorer": false
+}
