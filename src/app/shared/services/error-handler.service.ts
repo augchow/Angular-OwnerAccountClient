@@ -32,10 +32,11 @@ export class ErrorHandlerService {
 
     private handleOtherError(error: HttpErrorResponse) {
         this.createErrorMessage(error);
+        $('#errorModal').modal();
         //TODO: this will be fixed later;
     }
 
-    private createErrorMessage(error: HttpErrorResponse){
+    private createErrorMessage(error: HttpErrorResponse) {
         this.errorMessage = error.error ? error.error : error.statusText;
     }
 }
